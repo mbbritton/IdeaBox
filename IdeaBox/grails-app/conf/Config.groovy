@@ -110,15 +110,17 @@ import grails.plugin.springsecurity.SecurityConfigType
 grails.plugin.springsecurity.securityConfigType = SecurityConfigType.InterceptUrlMap
 grails.plugin.springsecurity.interceptUrlMap = [
 	    '/':                 ['IS_AUTHENTICATED_ANONYMOUSLY'],
-		'/list':             ['IS_AUTHENTICATED_ANONYMOUSLY'],
 		'/login/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-		'/show':             ['IS_AUTHENTICATED_ANONYMOUSLY'],
-		'/**/create':        ['IS_AUTHENTICATED_FULLY'],
-		'/**/edit/**':       ['IS_AUTHENTICATED_FULLY'],
-		'/**/delete/**':     ['IS_AUTHENTICATED_FULLY'],
-		'/**/idea/**':       ['IS_AUTHENTICATED_ANONYMOUSLY'],
 		'/register/**':		 ['IS_AUTHENTICATED_ANONYMOUSLY'],
-		'/**':               ['IS_AUTHENTICATED_FULLY']
+		//
+		'/idea/index':       ['IS_AUTHENTICATED_FULLY'], // Is route for DELETE
+		'/idea/create':      ['IS_AUTHENTICATED_FULLY'],
+		'/idea/save':        ['IS_AUTHENTICATED_FULLY'],
+		'/idea/edit/*':      ['IS_AUTHENTICATED_FULLY'],
+		'/idea/list':        ['IS_AUTHENTICATED_ANONYMOUSLY'],
+		'/idea/show/*':      ['IS_AUTHENTICATED_ANONYMOUSLY'],
+		//
+		'/**':               ['ROLE_ADMIN', 'IS_AUTHENTICATED_FULLY']
 ]
 
 
