@@ -25,6 +25,15 @@
 			</g:if>
 			<ol class="property-list idea">
 			
+				<g:if test="${ideaInstance?.name}">
+				<li class="fieldcontain">
+					<span id="name-label" class="property-label"><g:message code="idea.name.label" default="Name" /></span>
+					
+						<span class="property-value" aria-labelledby="name-label"><g:fieldValue bean="${ideaInstance}" field="name"/></span>
+					
+				</li>
+				</g:if>
+				
 				<g:if test="${ideaInstance?.description}">
 				<li class="fieldcontain">
 					<span id="description-label" class="property-label"><g:message code="idea.description.label" default="Description" /></span>
@@ -34,14 +43,6 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${ideaInstance?.name}">
-				<li class="fieldcontain">
-					<span id="name-label" class="property-label"><g:message code="idea.name.label" default="Name" /></span>
-					
-						<span class="property-value" aria-labelledby="name-label"><g:fieldValue bean="${ideaInstance}" field="name"/></span>
-					
-				</li>
-				</g:if>
 			
 			</ol>
 			<g:form>

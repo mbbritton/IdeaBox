@@ -160,10 +160,16 @@ the explicit tags above and edit those, not the taglib code.
 				<nobr>
 				<div id='loginLinkContainer'>
 				<sec:ifLoggedIn>
-				Logged in as <sec:username/> (<g:link controller='logout'>Logout</g:link>)
+					<div>
+						Logged in as <sec:username/> (<g:link controller='logout'>Logout</g:link>)
+						<br />
+					</div>
 				</sec:ifLoggedIn>
+				<g:link controller="idea" action="list">Idea Box</g:link>
 				<sec:ifNotLoggedIn>
-					<a href='#' id='loginLink'>Login</a>
+					<div>
+						<a href='#' id='loginLink'>Login</a>
+					</div>
 				</sec:ifNotLoggedIn>
 
 				<sec:ifSwitched>

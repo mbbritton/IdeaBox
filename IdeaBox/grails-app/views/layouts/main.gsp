@@ -19,8 +19,11 @@
 	</head>
 	<body>
 		<div id="grailsLogo" role="banner">
-			<a href="http://grails.org"><img src="${resource(dir: 'images', file: 'grails_logo.png')}" alt="Grails"/></a>
-			<div class="loginBanner">
+		<div class="ourcolor">&nbsp;</div>
+		<div class="loginBanner">
+			<sec:ifAnyGranted roles="ROLE_ADMIN">
+				<g:link controller="user" action="search">Admin Panel</g:link>
+			</sec:ifAnyGranted>
 			<sec:ifNotLoggedIn>
 				<g:link controller="login" action="index">Login</g:link>
 			</sec:ifNotLoggedIn>
