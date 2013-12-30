@@ -14,8 +14,8 @@
 				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
 				<li><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
 				<sec:ifLoggedIn>
-				    <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-				</sec:ifLoggedIn>    
+					<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+				</sec:ifLoggedIn>	
 			</ul>
 		</div>
 		<div id="show-idea" class="content scaffold-show" role="main">
@@ -43,6 +43,15 @@
 				</li>
 				</g:if>
 			
+			
+				<g:if test="${ideaInstance?.status}">
+				<li class="fieldcontain">
+					<span id="status-label" class="property-label"><g:message code="idea.status.label" default="Status" /></span>
+					
+						<span class="property-value" aria-labelledby="status-label"><g:fieldValue bean="${ideaInstance}" field="status"/></span>
+					
+				</li>
+				</g:if>
 			
 			</ol>
 			<g:form>

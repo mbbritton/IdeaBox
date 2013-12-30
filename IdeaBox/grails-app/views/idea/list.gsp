@@ -12,9 +12,9 @@
 		<div class="nav" role="navigation">
 			<ul>
 				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-					<sec:ifLoggedIn>			
-				    	<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-				    </sec:ifLoggedIn>
+				<sec:ifLoggedIn>
+					<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+				</sec:ifLoggedIn>
 			</ul>
 		</div>
 		<div id="list-idea" class="content scaffold-list" role="main">
@@ -27,8 +27,10 @@
 					<tr>
 					
 						<g:sortableColumn property="name" title="${message(code: 'idea.name.label', default: 'Name')}" />
+
 						<g:sortableColumn property="description" title="${message(code: 'idea.description.label', default: 'Description')}" />
 					
+						<g:sortableColumn property="status" title="${message(code: 'idea.status.label', default: 'Status')}" />
 					
 					</tr>
 				</thead>
@@ -39,6 +41,8 @@
 						<td><g:link action="show" id="${ideaInstance.id}">${fieldValue(bean: ideaInstance, field: "description")}</g:link></td>
 					
 						<td>${fieldValue(bean: ideaInstance, field: "name")}</td>
+					
+						<td>${fieldValue(bean: ideaInstance, field: "status")}</td>
 					
 					</tr>
 				</g:each>

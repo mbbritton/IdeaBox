@@ -6,4 +6,5 @@ class Idea {
 
 	String name;
 	String description;
+	String status;
 }
