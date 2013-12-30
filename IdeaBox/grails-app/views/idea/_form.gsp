@@ -1,6 +1,7 @@
 <%@ page import="ideabox.Idea" %>
 
 
+
 <div class="fieldcontain ${hasErrors(bean: ideaInstance, field: 'name', 'error')} ">
 	<label for="name">
 		<g:message code="idea.name.label" default="Name" />
@@ -17,4 +18,12 @@
 	<g:textField name="description" value="${ideaInstance?.description}"/>
 </div>
 
+
+<div class="fieldcontain ${hasErrors(bean: ideaInstance, field: 'status', 'error')} ">
+	<label for="status">
+		<g:message code="idea.status.label" default="Status" />
+		
+	</label>
+	<g:textField name="status" value="${ideaInstance?.status}"/>
+</div>
 
