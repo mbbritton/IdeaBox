@@ -51,6 +51,10 @@ body {
 	background-color: #abbf78;
 }
 
+.loginBanner {
+	float: right;
+}
+
 /* replace with .no-boxshadow body if you have modernizr available */
 .ie6 body,
 .ie7 body,
