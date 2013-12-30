@@ -15,7 +15,7 @@ class UrlMappings {
 			}
 		}
 
-		"/"(view:"/index")
+		"/"(controller:'idea/list')
 		"500"(view:'/error')
 	}
 }
