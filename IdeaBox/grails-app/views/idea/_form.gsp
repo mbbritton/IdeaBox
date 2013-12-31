@@ -18,12 +18,13 @@
 	<g:textField name="description" value="${ideaInstance?.description}"/>
 </div>
 
-
-<div class="fieldcontain ${hasErrors(bean: ideaInstance, field: 'status', 'error')} ">
-	<label for="status">
-		<g:message code="idea.status.label" default="Status" />
-		
-	</label>
-	<g:textField name="status" value="${ideaInstance?.status}"/>
-</div>
+<sec:ifAllGranted roles="ROLE_STATUS_MEISTER">
+	<div class="fieldcontain ${hasErrors(bean: ideaInstance, field: 'status', 'error')} ">
+		<label for="status">
+			<g:message code="idea.status.label" default="Status" />
+			
+		</label>
+		<g:textField name="status" value="${ideaInstance?.status}"/>
+	</div>
+</sec:ifAllGranted>
 

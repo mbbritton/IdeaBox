@@ -30,7 +30,9 @@
 
 						<g:sortableColumn property="description" title="${message(code: 'idea.description.label', default: 'Description')}" />
 					
-						<g:sortableColumn property="status" title="${message(code: 'idea.status.label', default: 'Status')}" />
+						<sec:ifAllGranted roles="ROLE_STATUS_MEISTER">
+							<g:sortableColumn property="status" title="${message(code: 'idea.status.label', default: 'Status')}" />
+						</sec:ifAllGranted>
 					
 					</tr>
 				</thead>
@@ -42,7 +44,9 @@
 					
 						<td>${fieldValue(bean: ideaInstance, field: "name")}</td>
 					
-						<td>${fieldValue(bean: ideaInstance, field: "status")}</td>
+						<sec:ifAllGranted roles="ROLE_STATUS_MEISTER">
+							<td>${fieldValue(bean: ideaInstance, field: "status")}</td>
+						</sec:ifAllGranted>
 					
 					</tr>
 				</g:each>

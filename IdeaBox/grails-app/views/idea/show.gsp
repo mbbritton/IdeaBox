@@ -43,15 +43,16 @@
 				</li>
 				</g:if>
 			
-			
-				<g:if test="${ideaInstance?.status}">
-				<li class="fieldcontain">
-					<span id="status-label" class="property-label"><g:message code="idea.status.label" default="Status" /></span>
-					
-						<span class="property-value" aria-labelledby="status-label"><g:fieldValue bean="${ideaInstance}" field="status"/></span>
-					
-				</li>
-				</g:if>
+				<sec:ifAllGranted roles="ROLE_STATUS_MEISTER">
+					<g:if test="${ideaInstance?.status}">
+					<li class="fieldcontain">
+						<span id="status-label" class="property-label"><g:message code="idea.status.label" default="Status" /></span>
+						
+							<span class="property-value" aria-labelledby="status-label"><g:fieldValue bean="${ideaInstance}" field="status"/></span>
+						
+					</li>
+					</g:if>
+				</sec:ifAllGranted>
 			
 			</ol>
 			<g:form>
