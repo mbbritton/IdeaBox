@@ -21,6 +21,9 @@
 		<div id="grailsLogo" role="banner">
 		<div class="ourcolor">&nbsp;</div>
 		<div class="loginBanner">
+			<sec:ifLoggedIn>
+				Welcome <sec:username/>.
+			</sec:ifLoggedIn>
 			<sec:ifAnyGranted roles="ROLE_ADMIN">
 				<g:link controller="user" action="search">Admin Panel</g:link>
 			</sec:ifAnyGranted>
